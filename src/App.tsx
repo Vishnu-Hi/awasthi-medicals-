@@ -179,7 +179,7 @@ function App() {
             <p className="text-white/60 leading-7 max-w-xl">AWASTHI MEDICALS has been a trusted part of the Bhoothnath Market community in Lucknow for more than 40 years. Owned and managed by Shivam Awasthi and Vishnu Kant Awasthi, the clinic benefits from the expert guidance of Dr. Shailja Awasthi, a respected homeopathic physician. As the clinic’s consulting physician, Dr. Shailja offers thoughtful, personalized guidance and takes the time to help each patient make informed decisions about their care.</p>
           </div>
           <div className="grid sm:grid-cols-3 gap-px bg-white/10 mt-16">
-            {[["25+","Years of local presence"],["01","Store + clinic"],["Lucknow","Bhoothnath Market"]].map(([big,small])=>
+            {[["40","Years of presence"],["02","Store + clinic"],["Lucknow","Bhoothnath Market and Amrapali Market "]].map(([big,small])=>
               <div key={big} className="bg-[#090b0a] p-8 sm:p-10"><div className="text-4xl sm:text-5xl font-semibold">{big}</div><div className="text-white/50 text-xs uppercase tracking-wider mt-3">{small}</div></div>
             )}
           </div>
@@ -201,6 +201,7 @@ function App() {
                   <span className="px-3 py-1.5 bg-black/5 rounded-full text-xs font-medium">Hairfall</span>
                   <span className="px-3 py-1.5 bg-black/5 rounded-full text-xs font-medium">Piles Specialist</span>
                   <span className="px-3 py-1.5 bg-black/5 rounded-full text-xs font-medium">Kidney Stones</span>
+                  <span className="px-3 py-1.5 bg-black/5 rounded-full text-xs font-medium">Women Wellness</span>
                   </div>
                   </div>
               <div className="flex flex-wrap gap-2 mt-7"><span className="px-3 py-2 border border-black/15 rounded-full text-xs">BHMS</span><span className="px-3 py-2 border border-black/15 rounded-full text-xs">Homeopathy</span><span className="px-3 py-2 border border-black/15 rounded-full text-xs">Lucknow</span></div>
@@ -232,9 +233,9 @@ function App() {
           <h2 className="font-playfair italic text-5xl sm:text-7xl leading-none mb-12">Come by. Call. WhatsApp.</h2>
           <div className="grid lg:grid-cols-2 gap-5">
             <div className="border border-white/10 bg-white/[.03] p-7 sm:p-10">
-              <div className="flex gap-4 py-5 border-b border-white/10"><MapPin className="text-[#c9ff48] shrink-0"/><div><div className="text-xs uppercase tracking-wider text-white/40">Address</div><div className="mt-2">Shop No. 5, Bhoothnath Market, Sector 5, Indira Nagar, Lucknow, Uttar Pradesh 226016</div></div></div>
+              <div className="flex gap-4 py-5 border-b border-white/10"><MapPin className="text-[#c9ff48] shrink-0"/><div><div className="text-xs uppercase tracking-wider text-white/40">Address</div><div className="mt-2">Shop No. 5, Bhoothnath Market, Indira Nagar, Lucknow, Uttar Pradesh 226016</div></div></div>
               <div className="flex gap-4 py-5 border-b border-white/10"><Phone className="text-[#c9ff48] shrink-0"/><div><div className="text-xs uppercase tracking-wider text-white/40">Phone</div><div className="mt-2">{PHONE.replace("+91","")}</div></div></div>
-              <div className="flex gap-4 py-5"><MessageCircle className="text-[#c9ff48] shrink-0"/><div><div className="text-xs uppercase tracking-wider text-white/40">WhatsApp</div><div className="mt-2">Message the store for enquiries and home delivery.</div></div></div>
+              <div className="flex gap-4 py-5"><MessageCircle className="text-[#c9ff48] shrink-0"/><div><div className="text-xs uppercase tracking-wider text-white/40">WhatsApp</div><div className="mt-2">Message the store for enquiries, home delivery and for consulting the doctor.</div></div></div>
               <div className="flex flex-wrap gap-3 mt-6">
                 <a href={`tel:${PHONE}`} className="bg-white text-black px-6 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2"><Phone size={16}/> Call Store</a>
                 <a href={whatsapp("Hello Awasthi Medicals, I have an enquiry.")} className="bg-[#c9ff48] text-black px-6 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2"><MessageCircle size={16}/> WhatsApp</a>
