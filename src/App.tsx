@@ -19,11 +19,8 @@ import {
 const PHONE = "+917081222214";
 const MAP_QUERY = "Bhoothnath Market, Indira Nagar, Lucknow, Uttar Pradesh 226016";
 
-const BG_IMAGE_1 =
-  "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260609_195923_b0ba8ace-1d1d-4f2c-9a28-1ab84b330680.png&w=1280&q=85";
-
-const BG_IMAGE_2 =
-  "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260609_201152_bba90a12-bf12-459f-91f0-51f237dbaf3b.png&w=1280&q=85";
+const BG_IMAGE_1 = "assets/hero_bg1.webp";
+const BG_IMAGE_2 = "assets/hero_bg2.webp";
 
 const SPOTLIGHT_R = 260;
 
@@ -43,9 +40,12 @@ function getLiveStatus(): LiveStatus {
   const totalMinutes = now.getHours() * 60 + now.getMinutes();
   const day = now.getDay(); // 0 is Sunday, 1 is Monday...
 
-  // Store: 09:00 (540 min) to 22:30 (1350 min) daily
-  const isStoreOpen = totalMinutes >= 540 && totalMinutes <= 1350;
-  const storeStatus = isStoreOpen
+  // Store: 09:00 (540 min) to 22:30 (1350 min), Monday - Saturday (6 days)
+  const isStoreDay = day >= 1 && day <= 6;
+  const isStoreOpen = isStoreDay && totalMinutes >= 540 && totalMinutes <= 1350;
+  const storeStatus = !isStoreDay
+    ? "Sunday Closed · Opens Monday 9:00 AM"
+    : isStoreOpen
     ? "Store Open Now · Closes 10:30 PM"
     : totalMinutes < 540
     ? "Store Opens Today at 9:00 AM"
@@ -459,7 +459,7 @@ function ReviewsSection() {
             <div>
               <div className="flex text-amber-400 gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={16} />
+                  <Star key={i} size={16} className="text-amber-400 fill-amber-400" />
                 ))}
               </div>
               <div className="text-xs text-white/60 mt-1">Based on 500+ patient visits in Lucknow</div>
@@ -477,7 +477,7 @@ function ReviewsSection() {
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex text-amber-400 gap-0.5">
                     {[...Array(rev.rating)].map((_, idx) => (
-                      <Star key={idx} size={15} />
+                      <Star key={idx} size={15} className="text-amber-400 fill-amber-400" />
                     ))}
                   </div>
                   <span className="text-xs text-[#c9ff48]/70 font-mono">{rev.date}</span>
@@ -524,7 +524,7 @@ function FAQSection() {
   const faqs = [
     {
       q: "What are the store and clinic operating hours?",
-      a: "Awasthi Medicals pharmacy is open daily 7 days a week from 9:00 AM to 10:30 PM. Dr. Shailja Awasthi's homeopathic consultation sessions run Monday through Saturday: Morning (11:30 AM – 2:00 PM) and Evening (6:30 PM – 9:00 PM). Sunday consultations are available on-call.",
+      a: "Awasthi Medicals pharmacy is open 6 days a week (Monday through Saturday) from 9:00 AM to 10:30 PM. Dr. Shailja Awasthi's homeopathic consultation sessions run Monday through Saturday: Morning (11:30 AM – 2:00 PM) and Evening (6:30 PM – 9:00 PM). Sunday consultations are available on-call.",
     },
     {
       q: "How do I place an order for medicine home delivery?",
@@ -888,7 +888,7 @@ export default function App() {
           <div className="grid md:grid-cols-[.85fr_1.15fr] gap-12 items-center">
             <div className="relative">
               <img
-                src="/assets/dr_shailja.jpg"
+                src="assets/dr_shailja.jpg"
                 alt="Dr. Shailja Awasthi"
                 className="w-full max-h-[520px] object-cover rounded-3xl shadow-2xl border border-black/10"
               />
@@ -1009,7 +1009,7 @@ export default function App() {
               </div>
             </div>
             <img
-              src="/assets/delivery_banner.jpg"
+              src="assets/delivery_banner.jpg"
               alt="Awasthi Medicals Delivery"
               className="w-full h-auto min-h-35 object-cover rounded-3xl border border-black/15 shadow-2xl"
             />
@@ -1039,7 +1039,7 @@ export default function App() {
                 <Clock className="text-[#c9ff48] shrink-0" size={24} />
                 <div>
                   <div className="font-semibold text-white">Pharmacy Store Hours:</div>
-                  <div className="text-white/60 text-sm mt-1">Open 7 Days a Week: 9:00 AM – 10:30 PM</div>
+                  <div className="text-white/60 text-sm mt-1">Open 6 Days a Week: 9:00 AM – 10:30 PM</div>
                   <div className="text-[#c9ff48]/90 text-xs mt-2 font-medium">
                     Dr. Shailja Clinic: 11:30 AM – 2:00 PM & 6:30 PM – 9:00 PM (Mon-Sat)
                   </div>
