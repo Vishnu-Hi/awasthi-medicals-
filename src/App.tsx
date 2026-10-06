@@ -529,7 +529,7 @@ function FAQSection() {
   const faqs = [
     {
       q: "What are the store and clinic operating hours?",
-      a: "Awasthi Medicals pharmacy is open 6 days a week (Monday through Saturday) from 9:00 AM to 10:30 PM. Dr. Shailja Awasthi's homeopathic consultation sessions run Monday through Saturday: Morning (11:30 AM – 2:00 PM) and Evening (6:30 PM – 9:00 PM). Sunday consultations are available on-call.",
+      a: "Awasthi Medicals pharmacy is open 6 days a week (Monday through Saturday) from 10:30 AM to 10:30 PM. Dr. Shailja Awasthi's homeopathic consultation sessions run Monday through Saturday: Morning (11:30 AM – 2:00 PM) and Evening (6:30 PM – 9:00 PM). Sunday consultations are available on-call.",
     },
     {
       q: "How do I place an order for medicine home delivery?",
