@@ -1044,7 +1044,7 @@ export default function App() {
                 <Clock className="text-[#c9ff48] shrink-0" size={24} />
                 <div>
                   <div className="font-semibold text-white">Pharmacy Store Hours:</div>
-                  <div className="text-white/60 text-sm mt-1">Open 6 Days a Week: 9:00 AM – 10:30 PM</div>
+                  <div className="text-white/60 text-sm mt-1">Open 6 Days a Week: 10:30 AM – 10:30 PM</div>
                   <div className="text-[#c9ff48]/90 text-xs mt-2 font-medium">
                     Dr. Shailja Clinic: 11:30 AM – 2:00 PM & 6:30 PM – 9:00 PM (Mon-Sat)
                   </div>
