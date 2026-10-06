@@ -16,11 +16,16 @@ import {
   ShoppingBag,
 } from "lucide-react";
 
+import drShailjaImg from "./assets/dr_shailja.jpg";
+import deliveryBannerImg from "./assets/delivery_banner.jpg";
+import heroBg1 from "./assets/hero_bg1.webp";
+import heroBg2 from "./assets/hero_bg2.webp";
+
 const PHONE = "+917081222214";
 const MAP_QUERY = "Bhoothnath Market, Indira Nagar, Lucknow, Uttar Pradesh 226016";
 
-const BG_IMAGE_1 = "assets/hero_bg1.webp";
-const BG_IMAGE_2 = "assets/hero_bg2.webp";
+const BG_IMAGE_1 = heroBg1;
+const BG_IMAGE_2 = heroBg2;
 
 const SPOTLIGHT_R = 260;
 
@@ -888,7 +893,7 @@ export default function App() {
           <div className="grid md:grid-cols-[.85fr_1.15fr] gap-12 items-center">
             <div className="relative">
               <img
-                src="assets/dr_shailja.jpg"
+                src={drShailjaImg}
                 alt="Dr. Shailja Awasthi"
                 className="w-full max-h-[520px] object-cover rounded-3xl shadow-2xl border border-black/10"
               />
@@ -1009,7 +1014,7 @@ export default function App() {
               </div>
             </div>
             <img
-              src="assets/delivery_banner.jpg"
+              src={deliveryBannerImg}
               alt="Awasthi Medicals Delivery"
               className="w-full h-auto min-h-35 object-cover rounded-3xl border border-black/15 shadow-2xl"
             />
